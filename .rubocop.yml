@@ -1,0 +1,68 @@
+inherit_from: .rubocop_todo.yml
+
+# Comments may refer to certain string contents, or contain checkmarks etc.
+Style/AsciiComments:
+  Enabled: false
+
+# !!value is idiomatic for turning the value into a true true/false.
+Style/DoubleNegation:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Lint/HandleExceptions:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 150
+
+Metrics/CyclomaticComplexity:
+  Max: 50
+
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+# This cop seems to be confused.
+Layout/AccessModifierIndentation:
+  Enabled: false
+
+# We should not align parameters.
+Layout/AlignParameters:
+  Enabled: false
+
+# Daft cop. Makes code look ugly as hell for no sane reaosn.
+Style/BlockDelimiters:
+  Enabled: false
+
+# Hell no. Use compact style here.
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+AllCops:
+  TargetRubyVersion: 2.4
+  Include:
+    - Rakefile
+    - config.ru
+    - lib/**/*.rake
+  Exclude:
+    - bin/*
+    - node_modules/**/*.rb
+    - db/schema.rb
+    - db/migrate/*
+    - lib/tasks/import*.rake
+    - lib/tasks/export_missing_cities.rake
+    - node_modules/**/*
+    - bin/**/*
