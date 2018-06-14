@@ -1,5 +1,3 @@
-inherit_from: .rubocop_todo.yml
-
 # Comments may refer to certain string contents, or contain checkmarks etc.
 Style/AsciiComments:
   Enabled: false
@@ -9,6 +7,9 @@ Style/DoubleNegation:
   Enabled: false
 
 Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
   Enabled: false
 
 Lint/HandleExceptions:
@@ -52,17 +53,13 @@ Style/ClassAndModuleChildren:
   Enabled: false
 
 AllCops:
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 2.5
   Include:
-    - Rakefile
     - config.ru
-    - lib/**/*.rake
+    - Rakefile
   Exclude:
     - bin/*
-    - node_modules/**/*.rb
-    - db/schema.rb
-    - db/migrate/*
-    - lib/tasks/import*.rake
-    - lib/tasks/export_missing_cities.rake
-    - node_modules/**/*
     - bin/**/*
+    - db/migrate/*
+    - db/schema.rb
+    - Gemfile
